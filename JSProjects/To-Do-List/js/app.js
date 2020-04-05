@@ -3,6 +3,12 @@ const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input");
 
+//nome das classes
+
+const CHECK = "fa-check-circle";
+const UNCHECK = "fa-circle-thin";
+const LINETHROUGH = "lineThrough";
+
 let LIST, id;
 
 //dados
@@ -19,16 +25,18 @@ if(data){
 }
 
 function loadList(array){
-    array.array.forEach(element => {
-        addToDo(element.name, element.id, element.done, element.trash);
+    array.forEach(function (item){
+        addToDo(item.name, item.id, item.done, item.trash);
     });
 }
 
-//nome das classes
+clear.addEventListener("click", function (){
+    
+    localStorage.clear();
+    location.reload();
 
-const CHECK = "fa-check-circle";
-const UNCHECK = "fa-circle-thin";
-const LINETHROUGH = "lineThrough";
+});
+
 
 //data
 
@@ -78,7 +86,7 @@ document.addEventListener("keyup", function (e){
 
             localStorage.setItem("TODO", JSON.stringify(LIST));
 
-            id++
+            id++;
         }
         
         input.value = "";
