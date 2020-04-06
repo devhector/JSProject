@@ -4,7 +4,6 @@ const list = document.getElementById("list");
 const input = document.getElementById("input");
 const header = document.getElementsByClassName("header");
 
-
 //nome das classes
 
 const CHECK = "fa-check-circle";
@@ -27,19 +26,14 @@ if(data){
 }
 
 
-
-
-
-function changeBg(){
+function backgroundRandon(){
     
     let num = Math.floor(Math.random() * 5);
     header["0"].style.backgroundImage = `url('img/bg${num}.jpg')`;
 }
 
 
-
-changeBg();
-
+backgroundRandon();
 
 
 function loadList(array){
