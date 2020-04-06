@@ -2,6 +2,8 @@ const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input");
+const header = document.getElementsByClassName("header");
+
 
 //nome das classes
 
@@ -23,6 +25,22 @@ if(data){
     LIST = [];
     id = 0;
 }
+
+
+
+
+
+function changeBg(){
+    
+    let num = Math.floor(Math.random() * 5);
+    header["0"].style.backgroundImage = `url('img/bg${num}.jpg')`;
+}
+
+
+
+changeBg();
+
+
 
 function loadList(array){
     array.forEach(function (item){
